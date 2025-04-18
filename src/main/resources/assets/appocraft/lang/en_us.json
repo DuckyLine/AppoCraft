@@ -1,0 +1,16 @@
+{
+  "item.appocraft.empty_can": "Empty Can",
+
+  "block.appocraft.oak_chair": "Oak Chair",
+  "block.appocraft.birch_chair": "Birch Chair",
+  "block.appocraft.spruce_chair": "Spruce Chair",
+  "block.appocraft.oak_table": "Oak Table",
+  "block.appocraft.birch_table": "Birch Table",
+  "block.appocraft.spruce_table": "Spruce Table",
+  "block.appocraft.oak_closet": "Oak Closet",
+  "block.appocraft.birch_closet": "Birch Closet",
+  "block.appocraft.spruce_closet": "Spruce Closet",
+
+  "creativetab.appocraft.appocraft_ressources": "AppoCraft Ressources",
+  "creativetab.appocraft.appocraft_furnitures": "AppoCraft Furnitures"
+}

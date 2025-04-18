@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "appocraft:block/oak_chair"
+    },
+    "facing=south": {
+      "model": "appocraft:block/oak_chair",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "appocraft:block/oak_chair",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "appocraft:block/oak_chair",
+      "y": 270
+    }
+  }
+}

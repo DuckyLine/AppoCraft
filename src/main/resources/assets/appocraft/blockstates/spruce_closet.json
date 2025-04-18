@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "appocraft:block/spruce_closet"
+    },
+    "facing=south": {
+      "model": "appocraft:block/spruce_closet",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "appocraft:block/spruce_closet",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "appocraft:block/spruce_closet",
+      "y": 270
+    }
+  }
+}
