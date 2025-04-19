@@ -36,4 +36,15 @@ public class items {
     public static final DeferredItem<Item> SPRUCE_CLOSET = ITEMS.register("spruce_closet",
             () -> new BlockItem((Block) blocks.SPRUCE_CLOSET.get(), new Item.Properties()));
 
+
+    public static final DeferredItem<Item> FRIDGE = ITEMS.register("fridge",
+            () -> new BlockItem((Block) blocks.FRIDGE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> FRIDGE_DOWN = ITEMS.register("fridge_up",
+            () -> new BlockItem((Block) blocks.FRIDGE_DOWN.get(), new Item.Properties()));
+    public static final DeferredItem<Item> FRIDGE_UP = ITEMS.register("fridge_down",
+            () -> new BlockItem((Block) blocks.FRIDGE_UP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> DISHWASHER = ITEMS.register("dishwasher",
+            () -> new BlockItem((Block) blocks.DISHWASHER.get(), new Item.Properties()));
+
 }

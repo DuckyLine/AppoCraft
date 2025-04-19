@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "appocraft:block/fridge_up"
+    },
+    "facing=south": {
+      "model": "appocraft:block/fridge_up",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "appocraft:block/fridge_up",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "appocraft:block/fridge_up",
+      "y": 270
+    }
+  }
+}

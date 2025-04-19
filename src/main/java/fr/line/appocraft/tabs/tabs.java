@@ -39,6 +39,8 @@ public class tabs {
                         Output.accept(blocks.OAK_CLOSET);
                         Output.accept(blocks.BIRCH_CLOSET);
                         Output.accept(blocks.SPRUCE_CLOSET);
+                        Output.accept(blocks.FRIDGE);
+                        Output.accept(blocks.DISHWASHER);
                     })
                     .build());
 

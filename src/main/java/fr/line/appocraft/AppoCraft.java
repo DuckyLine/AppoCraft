@@ -1,8 +1,13 @@
 package fr.line.appocraft;
 
 import fr.line.appocraft.blocks.blocks;
+import fr.line.appocraft.blocks.entity.ModBlockEntity;
 import fr.line.appocraft.items.items;
+import fr.line.appocraft.screen.ModMenuType;
+import fr.line.appocraft.screen.custom.ClosetScreen;
 import fr.line.appocraft.tabs.tabs;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -35,6 +40,10 @@ public class AppoCraft
         blocks.BLOCKS.register(modEventBus);
         tabs.TABS.register(modEventBus);
 
+        ModBlockEntity.register(modEventBus);
+
+        ModMenuType.MENUS.register(modEventBus);
+
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -54,6 +63,11 @@ public class AppoCraft
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+        }
+
+        @SubscribeEvent
+        public static void registerScreen(RegisterMenuScreensEvent event) {
+            event.register(ModMenuType.CLOSET_MENU.get(), ClosetScreen::new);
         }
     }
 }
