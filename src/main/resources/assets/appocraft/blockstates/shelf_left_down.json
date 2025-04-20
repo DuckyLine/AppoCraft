@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "appocraft:block/shelf_left_down"
+    },
+    "facing=south": {
+      "model": "appocraft:block/shelf_left_down",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "appocraft:block/shelf_left_down",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "appocraft:block/shelf_left_down",
+      "y": 270
+    }
+  }
+}

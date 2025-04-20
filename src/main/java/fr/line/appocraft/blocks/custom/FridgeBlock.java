@@ -28,7 +28,7 @@ public class FridgeBlock extends Block {
         BlockPos above = pos.above();
 
         BlockState fridgeDownState = blocks.FRIDGE_DOWN.get().defaultBlockState()
-                .setValue(FACING, state.getValue(BlockStateProperties.FACING));
+                .setValue(FridgeDownBlock.FACING, state.getValue(BlockStateProperties.FACING));
         BlockState fridgeUpState = blocks.FRIDGE_UP.get().defaultBlockState()
                 .setValue(FACING, state.getValue(BlockStateProperties.FACING));
 

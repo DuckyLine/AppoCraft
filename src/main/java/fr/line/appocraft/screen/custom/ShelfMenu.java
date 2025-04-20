@@ -1,44 +1,47 @@
 package fr.line.appocraft.screen.custom;
 
 import fr.line.appocraft.blocks.blocks;
-import fr.line.appocraft.blocks.entity.ClosetBlockEntity;
+import fr.line.appocraft.blocks.entity.ShelfBlockEntity;
 import fr.line.appocraft.screen.ModMenuType;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
-public class ClosetMenu extends AbstractContainerMenu {
-    public final ClosetBlockEntity blockEntity;
-    private final Level level;
+public class ShelfMenu extends AbstractContainerMenu {
+    public final ShelfBlockEntity shelfBlockEntity;
+    public final Level level;
 
-    public ClosetMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
+    public ShelfMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()));
     }
 
-    public ClosetMenu(int containerId, Inventory inv, BlockEntity blockEntity) {
-        super(ModMenuType.CLOSET_MENU.get(), containerId);
-        this.blockEntity = (ClosetBlockEntity) blockEntity;
+    public ShelfMenu(int containerId, Inventory inv, BlockEntity blockEntity) {
+        super(ModMenuType.SHELF_MENU.get(), containerId);
+        this.shelfBlockEntity = (ShelfBlockEntity) blockEntity;
         this.level = inv.player.level();
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 62, 17));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 80, 17));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 98, 17));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 3, 62, 35));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 4, 80, 35));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 5, 98, 35));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 6, 62, 53));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 7, 80, 53));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 8, 98, 53));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 0, 35, 26));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 1, 53, 26));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 2, 71, 26));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 3, 89, 26));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 4, 107, 26));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 5, 125, 26));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 6, 35, 44));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 7, 53, 44));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 8, 71, 44));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 9, 89, 44));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 10, 107, 44));
+        this.addSlot(new SlotItemHandler(this.shelfBlockEntity.inventory, 11, 125, 44));
     }
 
     private static final int HOTBAR_SLOT_COUNT = 9;
@@ -48,7 +51,7 @@ public class ClosetMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 9;
+    private static final int TE_INVENTORY_SLOT_COUNT = 12;
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -84,13 +87,9 @@ public class ClosetMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        Block currentBlock = level.getBlockState(blockEntity.getBlockPos()).getBlock();
-
-        return currentBlock == blocks.OAK_CLOSET.get()
-                || currentBlock == blocks.BIRCH_CLOSET.get()
-                || currentBlock == blocks.SPRUCE_CLOSET.get();
+        return stillValid(ContainerLevelAccess.create(level, shelfBlockEntity.getBlockPos()),
+                player, blocks.SHELF_LEFT_DOWN.get());
     }
-
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {

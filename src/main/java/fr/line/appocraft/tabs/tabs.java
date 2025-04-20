@@ -41,6 +41,9 @@ public class tabs {
                         Output.accept(blocks.SPRUCE_CLOSET);
                         Output.accept(blocks.FRIDGE);
                         Output.accept(blocks.DISHWASHER);
+                        Output.accept(blocks.SHELF);
+                        Output.accept(blocks.RED_SOFA);
+                        Output.accept(blocks.GREEN_SOFA);
                     })
                     .build());
 

@@ -36,7 +36,6 @@ public class items {
     public static final DeferredItem<Item> SPRUCE_CLOSET = ITEMS.register("spruce_closet",
             () -> new BlockItem((Block) blocks.SPRUCE_CLOSET.get(), new Item.Properties()));
 
-
     public static final DeferredItem<Item> FRIDGE = ITEMS.register("fridge",
             () -> new BlockItem((Block) blocks.FRIDGE.get(), new Item.Properties()));
     public static final DeferredItem<Item> FRIDGE_DOWN = ITEMS.register("fridge_up",
@@ -46,5 +45,34 @@ public class items {
 
     public static final DeferredItem<Item> DISHWASHER = ITEMS.register("dishwasher",
             () -> new BlockItem((Block) blocks.DISHWASHER.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> SHELF = ITEMS.register("shelf",
+            () -> new BlockItem((Block) blocks.SHELF.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SHELF_RIGHT_UP = ITEMS.register("shelf_right_up",
+            () -> new BlockItem((Block) blocks.SHELF_RIGHT_UP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SHELF_RIGHT_DOWN = ITEMS.register("shelf_right_down",
+            () -> new BlockItem((Block) blocks.SHELF_RIGHT_DOWN.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SHELF_LEFT_UP = ITEMS.register("shelf_left_up",
+            () -> new BlockItem((Block) blocks.SHELF_LEFT_UP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SHELF_LEFT_DOWN = ITEMS.register("shelf_left_down",
+            () -> new BlockItem((Block) blocks.SHELF_LEFT_DOWN.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> RED_SOFA = ITEMS.register("red_sofa",
+            () -> new BlockItem((Block) blocks.RED_SOFA.get(), new Item.Properties()));
+    public static final DeferredItem<Item> RED_SOFA_LEFT = ITEMS.register("red_sofa_left",
+            () -> new BlockItem((Block) blocks.RED_SOFA_LEFT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> RED_SOFA_RIGHT = ITEMS.register("red_sofa_right",
+            () -> new BlockItem((Block) blocks.RED_SOFA_RIGHT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> RED_SOFA_MIDLE = ITEMS.register("red_sofa_midle",
+            () -> new BlockItem((Block) blocks.RED_SOFA_MIDLE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> GREEN_SOFA = ITEMS.register("green_sofa",
+            () -> new BlockItem((Block) blocks.GREEN_SOFA.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GREEN_SOFA_LEFT = ITEMS.register("green_sofa_left",
+            () -> new BlockItem((Block) blocks.GREEN_SOFA_LEFT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GREEN_SOFA_RIGHT = ITEMS.register("green_sofa_right",
+            () -> new BlockItem((Block) blocks.GREEN_SOFA_RIGHT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GREEN_SOFA_MIDLE = ITEMS.register("green_sofa_midle",
+            () -> new BlockItem((Block) blocks.GREEN_SOFA_MIDLE.get(), new Item.Properties()));
 
 }

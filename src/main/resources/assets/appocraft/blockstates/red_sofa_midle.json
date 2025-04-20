@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "appocraft:block/red_sofa_midle"
+    },
+    "facing=south": {
+      "model": "appocraft:block/red_sofa_midle",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "appocraft:block/red_sofa_midle",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "appocraft:block/red_sofa_midle",
+      "y": 270
+    }
+  }
+}

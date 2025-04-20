@@ -1,10 +1,13 @@
 package fr.line.appocraft;
 
 import fr.line.appocraft.blocks.blocks;
+import fr.line.appocraft.blocks.custom.SofaBlock;
 import fr.line.appocraft.blocks.entity.ModBlockEntity;
 import fr.line.appocraft.items.items;
 import fr.line.appocraft.screen.ModMenuType;
 import fr.line.appocraft.screen.custom.ClosetScreen;
+import fr.line.appocraft.screen.custom.FridgeScreen;
+import fr.line.appocraft.screen.custom.ShelfScreen;
 import fr.line.appocraft.tabs.tabs;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -24,6 +27,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+
+import java.util.List;
 
 @Mod(AppoCraft.MODID)
 public class AppoCraft
@@ -49,6 +54,16 @@ public class AppoCraft
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        SofaBlock.sofaStates = List.of(
+                blocks.RED_SOFA.get().defaultBlockState(),
+                blocks.RED_SOFA_LEFT.get().defaultBlockState(),
+                blocks.RED_SOFA_RIGHT.get().defaultBlockState(),
+                blocks.RED_SOFA_MIDLE.get().defaultBlockState(),
+                blocks.GREEN_SOFA.get().defaultBlockState(),
+                blocks.GREEN_SOFA_LEFT.get().defaultBlockState(),
+                blocks.GREEN_SOFA_RIGHT.get().defaultBlockState(),
+                blocks.GREEN_SOFA_MIDLE.get().defaultBlockState()
+        );
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -68,6 +83,8 @@ public class AppoCraft
         @SubscribeEvent
         public static void registerScreen(RegisterMenuScreensEvent event) {
             event.register(ModMenuType.CLOSET_MENU.get(), ClosetScreen::new);
+            event.register(ModMenuType.FRIDGE_MENU.get(), FridgeScreen::new);
+            event.register(ModMenuType.SHELF_MENU.get(), ShelfScreen::new);
         }
     }
 }

@@ -2,15 +2,13 @@ package fr.line.appocraft.blocks;
 
 import fr.line.appocraft.AppoCraft;
 import fr.line.appocraft.blocks.custom.*;
-import fr.line.appocraft.items.items;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.function.Supplier;
+import java.util.List;
 
 public class blocks {
 
@@ -47,4 +45,32 @@ public class blocks {
     public static final DeferredBlock DISHWASHER = BLOCKS.register("dishwasher",
             () -> new DishWasherBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
+    public static final DeferredBlock SHELF = BLOCKS.register("shelf",
+            () -> new ShelfBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> SHELF_RIGHT_UP = BLOCKS.register("shelf_right_up",
+            () -> new ShelfRightUpBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> SHELF_RIGHT_DOWN = BLOCKS.register("shelf_right_down",
+            () -> new ShelfRightDownBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> SHELF_LEFT_UP = BLOCKS.register("shelf_left_up",
+            () -> new ShelfLeftUpBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> SHELF_LEFT_DOWN = BLOCKS.register("shelf_left_down",
+            () -> new ShelfLeftDownBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> RED_SOFA = BLOCKS.register("red_sofa",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.RED));
+    public static final DeferredBlock<Block> RED_SOFA_LEFT = BLOCKS.register("red_sofa_left",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.RED));
+    public static final DeferredBlock<Block> RED_SOFA_RIGHT = BLOCKS.register("red_sofa_right",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.RED));
+    public static final DeferredBlock<Block> RED_SOFA_MIDLE = BLOCKS.register("red_sofa_midle",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.RED));
+
+    public static final DeferredBlock<Block> GREEN_SOFA = BLOCKS.register("green_sofa",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.GREEN));
+    public static final DeferredBlock<Block> GREEN_SOFA_LEFT = BLOCKS.register("green_sofa_left",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.GREEN));
+    public static final DeferredBlock<Block> GREEN_SOFA_RIGHT = BLOCKS.register("green_sofa_right",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.GREEN));
+    public static final DeferredBlock<Block> GREEN_SOFA_MIDLE = BLOCKS.register("green_sofa_midle",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion(), SofaBlock.SofaColor.GREEN));
 }
