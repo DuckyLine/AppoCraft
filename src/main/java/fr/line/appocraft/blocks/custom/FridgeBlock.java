@@ -8,17 +8,18 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-
-import static fr.line.appocraft.blocks.custom.FridgeUpBlock.FACING;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 public class FridgeBlock extends Block {
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+
     public FridgeBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(BlockStateProperties.FACING, context.getHorizontalDirection().getOpposite());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
@@ -28,9 +29,9 @@ public class FridgeBlock extends Block {
         BlockPos above = pos.above();
 
         BlockState fridgeDownState = blocks.FRIDGE_DOWN.get().defaultBlockState()
-                .setValue(FridgeDownBlock.FACING, state.getValue(BlockStateProperties.FACING));
+                .setValue(FridgeDownBlock.FACING, state.getValue(FACING));
         BlockState fridgeUpState = blocks.FRIDGE_UP.get().defaultBlockState()
-                .setValue(FACING, state.getValue(BlockStateProperties.FACING));
+                .setValue(FACING, state.getValue(FACING));
 
         world.setBlock(pos, fridgeDownState, 3);
         if (world.getBlockState(above).isAir()) {
@@ -40,6 +41,6 @@ public class FridgeBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(BlockStateProperties.FACING);
+        builder.add(FACING);
     }
 }

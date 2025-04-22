@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 public class ChairBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<ChairBlock> CODEC = simpleCodec(ChairBlock::new);
     private static final VoxelShape SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
+    public static final EnumProperty<WoodType> WOOD_TYPE = EnumProperty.create("wood_type", WoodType.class);
 
     public ChairBlock(Properties properties) {
         super(properties);

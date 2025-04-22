@@ -38,6 +38,7 @@ public class Closet extends BaseEntityBlock {
                     Codec.STRING.fieldOf("wood_type").forGetter(Closet::getWoodType)
             ).apply(instance, Closet::new)
     );
+
     private final String woodType;
     private final BlockBehaviour.Properties props;
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
@@ -63,8 +64,7 @@ public class Closet extends BaseEntityBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        Direction direction = context.getHorizontalDirection();
-        return this.defaultBlockState().setValue(FACING, direction.getOpposite());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override

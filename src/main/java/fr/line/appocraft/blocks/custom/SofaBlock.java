@@ -26,36 +26,13 @@ public class SofaBlock extends HorizontalDirectionalBlock {
     private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 16.0, 16.0);
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty PLACED_BY_PLAYER = BooleanProperty.create("placed_by_player");
-    public static final EnumProperty<SofaColor> COLOR = EnumProperty.create("color", SofaColor.class);
-
-    // Enum pour la couleur du canapé
-    public enum SofaColor implements StringRepresentable {
-        RED("red"),
-        GREEN("green");
-
-        private final String name;
-
-        // Constructeur pour l'énumération
-        SofaColor(String name) {
-            this.name = name;
-        }
-
-        // Méthode qui renvoie la chaîne représentant la couleur
-        @Override
-        public String getSerializedName() {
-            return this.name;
-        }
-    }
 
     public static List<BlockState> sofaStates;
     private Integer color;
 
-    public SofaBlock(Properties properties, SofaColor color) {
+    public SofaBlock(Properties properties) {
         super(properties);
         this.color = 0;
-        this.registerDefaultState(this.stateDefinition.any()
-                .setValue(COLOR, color)
-                .setValue(FACING, Direction.NORTH));
     }
 
     public class SofaPlacerFlag {
