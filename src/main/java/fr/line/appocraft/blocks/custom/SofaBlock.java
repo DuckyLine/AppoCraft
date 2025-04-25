@@ -1,6 +1,7 @@
 package fr.line.appocraft.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
+import fr.line.appocraft.blocks.custom.type.SofaType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -27,12 +29,8 @@ public class SofaBlock extends HorizontalDirectionalBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty PLACED_BY_PLAYER = BooleanProperty.create("placed_by_player");
 
-    public static List<BlockState> sofaStates;
-    private Integer color;
-
     public SofaBlock(Properties properties) {
         super(properties);
-        this.color = 0;
     }
 
     public class SofaPlacerFlag {
@@ -51,6 +49,7 @@ public class SofaBlock extends HorizontalDirectionalBlock {
 
         if (SofaPlacerFlag.ignoreNextRemove || SofaPlacerFlag.ignoreNextPlace) return;
 
+        List<DeferredBlock<Block>> sofaStates = SofaType.getSofaType(state.getBlock());
         Direction facing = state.getValue(FACING);
 
         Direction right = switch (facing) {
@@ -67,20 +66,20 @@ public class SofaBlock extends HorizontalDirectionalBlock {
         BlockPos leftPos = pos.relative(left);
 
         SofaPlacerFlag.ignoreNextPlace = true;
-        if (level.getBlockState(leftPos).is(sofaStates.get(1 + color).getBlock()))
-            level.setBlock(leftPos, sofaStates.get(0 + color)
+        if (level.getBlockState(leftPos).is(sofaStates.get(1)))
+            level.setBlock(leftPos, sofaStates.get(0).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
-        if (level.getBlockState(rightPos).is(sofaStates.get(2 + color).getBlock()))
-            level.setBlock(rightPos, sofaStates.get(0 + color)
+        if (level.getBlockState(rightPos).is(sofaStates.get(2)))
+            level.setBlock(rightPos, sofaStates.get(0).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
-        if (level.getBlockState(leftPos).is(sofaStates.get(3 + color).getBlock()))
-            level.setBlock(leftPos, sofaStates.get(2 + color)
+        if (level.getBlockState(leftPos).is(sofaStates.get(3)))
+            level.setBlock(leftPos, sofaStates.get(2).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
-        if (level.getBlockState(rightPos).is(sofaStates.get(3 + color).getBlock()))
-            level.setBlock(rightPos, sofaStates.get(1 + color)
+        if (level.getBlockState(rightPos).is(sofaStates.get(3)))
+            level.setBlock(rightPos, sofaStates.get(1).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
         SofaPlacerFlag.ignoreNextPlace = false;
@@ -93,6 +92,7 @@ public class SofaBlock extends HorizontalDirectionalBlock {
         if (!state.getValue(PLACED_BY_PLAYER)) return;
         if (SofaPlacerFlag.ignoreNextPlace) return;
 
+        List<DeferredBlock<Block>> sofaStates = SofaType.getSofaType(state.getBlock());
         Direction facing = state.getValue(FACING);
 
         Direction right = switch (facing) {
@@ -108,35 +108,35 @@ public class SofaBlock extends HorizontalDirectionalBlock {
         BlockPos rightPos = pos.relative(right);
         BlockPos leftPos = pos.relative(left);
         SofaPlacerFlag.ignoreNextRemove = true;
-        if (level.getBlockState(leftPos).is(sofaStates.get(0 + color).getBlock()) && !level.getBlockState(rightPos).is(sofaStates.get(0 + color).getBlock())) {
-            level.setBlock(leftPos, sofaStates.get(1 + color)
+        if (level.getBlockState(leftPos).is(sofaStates.get(0)) && !level.getBlockState(rightPos).is(sofaStates.get(0))) {
+            level.setBlock(leftPos, sofaStates.get(1).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
-            level.setBlock(pos, sofaStates.get(2 + color)
-                    .setValue(FACING, state.getValue(FACING))
-                    .setValue(PLACED_BY_PLAYER, false), 3);
-        }
-        else if (level.getBlockState(rightPos).is(sofaStates.get(0 + color).getBlock()) && !level.getBlockState(leftPos).is(sofaStates.get(0 + color).getBlock())) {
-            level.setBlock(rightPos, sofaStates.get(2 + color)
-                    .setValue(FACING, state.getValue(FACING))
-                    .setValue(PLACED_BY_PLAYER, false), 3);
-            level.setBlock(pos, sofaStates.get(1 + color)
+            level.setBlock(pos, sofaStates.get(2).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
         }
-        else if (level.getBlockState(leftPos).is(sofaStates.get(2 + color).getBlock())) {
-            level.setBlock(leftPos, sofaStates.get(3 + color)
+        else if (level.getBlockState(rightPos).is(sofaStates.get(0)) && !level.getBlockState(leftPos).is(sofaStates.get(0))) {
+            level.setBlock(rightPos, sofaStates.get(2).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
-            level.setBlock(pos, sofaStates.get(2 + color)
+            level.setBlock(pos, sofaStates.get(1).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
         }
-        else if (level.getBlockState(rightPos).is(sofaStates.get(1 + color).getBlock())) {
-            level.setBlock(rightPos, sofaStates.get(3 + color)
+        else if (level.getBlockState(leftPos).is(sofaStates.get(2))) {
+            level.setBlock(leftPos, sofaStates.get(3).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
-            level.setBlock(pos, sofaStates.get(1 + color)
+            level.setBlock(pos, sofaStates.get(2).get().defaultBlockState()
+                    .setValue(FACING, state.getValue(FACING))
+                    .setValue(PLACED_BY_PLAYER, false), 3);
+        }
+        else if (level.getBlockState(rightPos).is(sofaStates.get(1))) {
+            level.setBlock(rightPos, sofaStates.get(3).get().defaultBlockState()
+                    .setValue(FACING, state.getValue(FACING))
+                    .setValue(PLACED_BY_PLAYER, false), 3);
+            level.setBlock(pos, sofaStates.get(1).get().defaultBlockState()
                     .setValue(FACING, state.getValue(FACING))
                     .setValue(PLACED_BY_PLAYER, false), 3);
         }

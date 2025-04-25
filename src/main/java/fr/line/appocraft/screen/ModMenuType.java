@@ -4,6 +4,7 @@ import fr.line.appocraft.AppoCraft;
 import fr.line.appocraft.screen.custom.ClosetMenu;
 import fr.line.appocraft.screen.custom.FridgeMenu;
 import fr.line.appocraft.screen.custom.ShelfMenu;
+import fr.line.appocraft.screen.custom.TrashMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -26,6 +27,9 @@ public class ModMenuType {
 
     public static final DeferredHolder<MenuType<?>, MenuType<ShelfMenu>> SHELF_MENU =
             registerMenuType("shelf_menu", ShelfMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<TrashMenu>> TRASH_MENU =
+            registerMenuType("trash_menu", TrashMenu::new);
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                               IContainerFactory<T> factory) {

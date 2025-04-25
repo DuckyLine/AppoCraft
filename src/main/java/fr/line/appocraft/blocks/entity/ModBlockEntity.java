@@ -14,6 +14,11 @@ public class ModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY =
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, AppoCraft.MODID);
 
+    public static final Supplier<BlockEntityType<TrashBlockEntity>> TRASH_BE =
+            BLOCK_ENTITY.register("trash_be", () -> BlockEntityType.Builder.of(
+                            TrashBlockEntity::new, blocks.TRASH.get())
+                    .build(null));
+
     public static final Supplier<BlockEntityType<ShelfBlockEntity>> SHELF_BE =
             BLOCK_ENTITY.register("shelf_be", () -> BlockEntityType.Builder.of(
                             ShelfBlockEntity::new, blocks.SHELF_LEFT_DOWN.get())

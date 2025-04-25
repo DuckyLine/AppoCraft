@@ -36,6 +36,9 @@ public class tabs {
                         Output.accept(blocks.OAK_TABLE);
                         Output.accept(blocks.BIRCH_TABLE);
                         Output.accept(blocks.SPRUCE_TABLE);
+                        Output.accept(blocks.OAK_COFFEE_TABLE);
+                        Output.accept(blocks.BIRCH_COFFEE_TABLE);
+                        Output.accept(blocks.SPRUCE_COFFEE_TABLE);
                         Output.accept(blocks.OAK_CLOSET);
                         Output.accept(blocks.BIRCH_CLOSET);
                         Output.accept(blocks.SPRUCE_CLOSET);
@@ -44,6 +47,14 @@ public class tabs {
                         Output.accept(blocks.SHELF);
                         Output.accept(blocks.RED_SOFA);
                         Output.accept(blocks.GREEN_SOFA);
+                        Output.accept(blocks.WHITE_SOFA);
+                        Output.accept(blocks.BLACK_SOFA);
+                        Output.accept(blocks.GRAY_SOFA);
+                        Output.accept(blocks.TRASH);
+                        Output.accept(blocks.TV);
+                        Output.accept(blocks.FOLDING_TABLE);
+                        Output.accept(blocks.TRAFFIC_CONE);
+                        Output.accept(blocks.BARBED);
                     })
                     .build());
 

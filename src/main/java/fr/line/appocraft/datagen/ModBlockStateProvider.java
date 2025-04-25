@@ -20,39 +20,66 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        sameBlock(blocks.OAK_CHAIR.get(), "oak_chair");
-        sameBlock(blocks.BIRCH_CHAIR.get(), "birch_chair");
-        sameBlock(blocks.SPRUCE_CHAIR.get(), "spruce_chair");
+        sameBlock(blocks.OAK_CHAIR.get(), "chair/oak_chair");
+        sameBlock(blocks.BIRCH_CHAIR.get(), "chair/birch_chair");
+        sameBlock(blocks.SPRUCE_CHAIR.get(), "chair/spruce_chair");
 
-        sameBlock(blocks.OAK_TABLE.get(), "oak_table");
-        sameBlock(blocks.BIRCH_TABLE.get(), "birch_table");
-        sameBlock(blocks.SPRUCE_TABLE.get(), "spruce_table");
+        sameBlock(blocks.OAK_TABLE.get(), "table/oak_table");
+        sameBlock(blocks.BIRCH_TABLE.get(), "table/birch_table");
+        sameBlock(blocks.SPRUCE_TABLE.get(), "table/spruce_table");
 
-        directionBlockEntity(blocks.OAK_CLOSET.get(), "oak_closet", Closet.FACING);
-        directionBlockEntity(blocks.BIRCH_CLOSET.get(), "birch_closet", Closet.FACING);
-        directionBlockEntity(blocks.SPRUCE_CLOSET.get(), "spruce_closet", Closet.FACING);
+        sameBlock(blocks.OAK_COFFEE_TABLE.get(), "table/oak_coffee_table");
+        sameBlock(blocks.BIRCH_COFFEE_TABLE.get(), "table/birch_coffee_table");
+        sameBlock(blocks.SPRUCE_COFFEE_TABLE.get(), "table/spruce_coffee_table");
 
-        directionBlock(blocks.DISHWASHER.get(), "dishwasher");
+        directionBlockEntity(blocks.OAK_CLOSET.get(), "closet/oak_closet", Closet.FACING);
+        directionBlockEntity(blocks.BIRCH_CLOSET.get(), "closet/birch_closet", Closet.FACING);
+        directionBlockEntity(blocks.SPRUCE_CLOSET.get(), "closet/spruce_closet", Closet.FACING);
 
-        directionBlockEntity(blocks.FRIDGE_DOWN.get(), "fridge_down", FridgeDownBlock.FACING);
-        directionBlock(blocks.FRIDGE_UP.get(), "fridge_up");
-        directionBlockEntity(blocks.FRIDGE.get(), "fridge", FridgeBlock.FACING);
+        directionBlock(blocks.DISHWASHER.get(), "other/dishwasher");
 
-        directionBlockEntity(blocks.SHELF_LEFT_DOWN.get(), "shelf_left_down", ShelfLeftDownBlock.FACING);
-        directionBlock(blocks.SHELF_LEFT_UP.get(), "shelf_left_up");
-        directionBlock(blocks.SHELF_RIGHT_UP.get(), "shelf_right_up");
-        directionBlock(blocks.SHELF_RIGHT_DOWN.get(), "shelf_right_down");
-        directionBlockEntity(blocks.SHELF.get(), "shelf", ShelfBlock.FACING);
+        directionBlockEntity(blocks.FRIDGE_DOWN.get(), "other/fridge_down", FridgeDownBlock.FACING);
+        directionBlock(blocks.FRIDGE_UP.get(), "other/fridge_up");
+        directionBlockEntity(blocks.FRIDGE.get(), "other/fridge", FridgeBlock.FACING);
 
-        sameBlock(blocks.RED_SOFA.get(), "red_sofa");
-        sameBlock(blocks.RED_SOFA_RIGHT.get(), "red_sofa_right");
-        sameBlock(blocks.RED_SOFA_LEFT.get(), "red_sofa_left");
-        sameBlock(blocks.RED_SOFA_MIDLE.get(), "red_sofa_midle");
+        directionBlockEntity(blocks.SHELF_LEFT_DOWN.get(), "shelf/shelf_metal/shelf_left_down", ShelfLeftDownBlock.FACING);
+        directionBlock(blocks.SHELF_LEFT_UP.get(), "shelf/shelf_metal/shelf_left_up");
+        directionBlock(blocks.SHELF_RIGHT_UP.get(), "shelf/shelf_metal/shelf_right_up");
+        directionBlock(blocks.SHELF_RIGHT_DOWN.get(), "shelf/shelf_metal/shelf_right_down");
+        directionBlockEntity(blocks.SHELF.get(), "shelf/shelf_metal/shelf", ShelfBlock.FACING);
 
-        sameBlock(blocks.GREEN_SOFA.get(), "green_sofa");
-        sameBlock(blocks.GREEN_SOFA_RIGHT.get(), "green_sofa_right");
-        sameBlock(blocks.GREEN_SOFA_LEFT.get(), "green_sofa_left");
-        sameBlock(blocks.GREEN_SOFA_MIDLE.get(), "green_sofa_midle");
+        sameBlock(blocks.RED_SOFA.get(), "sofa/red_sofa");
+        sameBlock(blocks.RED_SOFA_RIGHT.get(), "sofa/red_sofa_right");
+        sameBlock(blocks.RED_SOFA_LEFT.get(), "sofa/red_sofa_left");
+        sameBlock(blocks.RED_SOFA_MIDLE.get(), "sofa/red_sofa_midle");
+
+        sameBlock(blocks.GREEN_SOFA.get(), "sofa/green_sofa");
+        sameBlock(blocks.GREEN_SOFA_RIGHT.get(), "sofa/green_sofa_right");
+        sameBlock(blocks.GREEN_SOFA_LEFT.get(), "sofa/green_sofa_left");
+        sameBlock(blocks.GREEN_SOFA_MIDLE.get(), "sofa/green_sofa_midle");
+
+        sameBlock(blocks.WHITE_SOFA.get(), "sofa/white_sofa");
+        sameBlock(blocks.WHITE_SOFA_RIGHT.get(), "sofa/white_sofa_right");
+        sameBlock(blocks.WHITE_SOFA_LEFT.get(), "sofa/white_sofa_left");
+        sameBlock(blocks.WHITE_SOFA_MIDLE.get(), "sofa/white_sofa_midle");
+
+        sameBlock(blocks.BLACK_SOFA.get(), "sofa/black_sofa");
+        sameBlock(blocks.BLACK_SOFA_RIGHT.get(), "sofa/black_sofa_right");
+        sameBlock(blocks.BLACK_SOFA_LEFT.get(), "sofa/black_sofa_left");
+        sameBlock(blocks.BLACK_SOFA_MIDLE.get(), "sofa/black_sofa_midle");
+
+        sameBlock(blocks.GRAY_SOFA.get(), "sofa/gray_sofa");
+        sameBlock(blocks.GRAY_SOFA_RIGHT.get(), "sofa/gray_sofa_right");
+        sameBlock(blocks.GRAY_SOFA_LEFT.get(), "sofa/gray_sofa_left");
+        sameBlock(blocks.GRAY_SOFA_MIDLE.get(), "sofa/gray_sofa_midle");
+
+        directionBlockEntity(blocks.TRASH.get(), "other/trash", TrashBlock.FACING);
+
+        sameBlock(blocks.TV.get(), "other/tv");
+
+        sameBlock(blocks.FOLDING_TABLE.get(), "table/folding_table");
+
+        sameBlock(blocks.TRAFFIC_CONE.get(), "other/traffic_cone");
     }
 
     private void directionBlockEntity(Block block, String name, DirectionProperty Facing) {

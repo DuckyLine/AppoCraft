@@ -12,17 +12,17 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class ChairBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<ChairBlock> CODEC = simpleCodec(ChairBlock::new);
-    private static final VoxelShape SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
+public class FoldingTableBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<FoldingTableBlock> CODEC = simpleCodec(FoldingTableBlock::new);
+    private static final VoxelShape SHAPE = Block.box(-8.0, 0.0, -1.0, 24.0, 16.0, 17.0);
 
-    public ChairBlock(Properties properties) {
+    public FoldingTableBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return ShelfLeftDownBlock.rotateShape(state.getValue(FACING), SHAPE);
     }
 
     @Override

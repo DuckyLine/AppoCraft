@@ -1,10 +1,7 @@
 package fr.line.appocraft.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
-import fr.line.appocraft.blocks.blocks;
-import fr.line.appocraft.blocks.entity.ClosetBlockEntity;
-import fr.line.appocraft.blocks.entity.FridgeBlockEntity;
-import fr.line.appocraft.screen.custom.FridgeMenu;
+import fr.line.appocraft.blocks.entity.TrashBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -19,7 +16,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -30,18 +26,18 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class FridgeDownBlock extends BaseEntityBlock {
+public class TrashBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
-    public static final MapCodec<FridgeDownBlock> CODEC = simpleCodec(FridgeDownBlock::new);
-    private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 2.0, 15.0, 16.0, 15.0);
+    public static final MapCodec<TrashBlock> CODEC = simpleCodec(TrashBlock::new);
+    private static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 15.0, 14.0);
 
-    public FridgeDownBlock(Properties properties) {
+    public TrashBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return ShelfLeftDownBlock.rotateShape(state.getValue(FACING), SHAPE);
+        return SHAPE;
     }
 
     @Override
@@ -61,26 +57,11 @@ public class FridgeDownBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-        super.onRemove(state, world, pos, newState, isMoving);
-
-        BlockPos below = pos.below();
-        BlockPos above = pos.above();
-
-        if (world.getBlockState(below).getBlock() == blocks.FRIDGE_DOWN.get()) {
-            world.destroyBlock(below, false);
-        }
-        if (world.getBlockState(above).getBlock() == blocks.FRIDGE_UP.get()) {
-            world.destroyBlock(above, false);
-        }
-    }
-
-    @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if(level.getBlockEntity(pos) instanceof FridgeBlockEntity fridgeBlockEntity) {
+        if(level.getBlockEntity(pos) instanceof TrashBlockEntity trashBlockEntity) {
             if(!level.isClientSide()) {
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(fridgeBlockEntity, Component.literal("Fridge")), pos);
+                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(trashBlockEntity, Component.literal("Trash")), pos);
                 return ItemInteractionResult.SUCCESS;
             }
         }
@@ -90,7 +71,7 @@ public class FridgeDownBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new FridgeBlockEntity(blockPos, blockState);
+        return new TrashBlockEntity(blockPos, blockState);
     }
 
     @Override

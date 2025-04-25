@@ -41,7 +41,7 @@ public class Closet extends BaseEntityBlock {
 
     private final String woodType;
     private final BlockBehaviour.Properties props;
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
+    public static final VoxelShape SHAPE = Block.box(0, 0, 2, 16, 16, 16);
 
     public String getWoodType() {
         return woodType;
@@ -69,7 +69,7 @@ public class Closet extends BaseEntityBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return ShelfLeftDownBlock.rotateShape(state.getValue(FACING), SHAPE);
     }
 
     @Override

@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 public class FridgeUpBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<FridgeUpBlock> CODEC = simpleCodec(FridgeUpBlock::new);
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+    private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 2.0, 15.0, 13.0, 15.0);
 
     public FridgeUpBlock(Properties properties) {
         super(properties);
@@ -36,7 +36,7 @@ public class FridgeUpBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return ShelfLeftDownBlock.rotateShape(state.getValue(FACING), SHAPE);
     }
 
     @Override

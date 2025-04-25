@@ -8,7 +8,12 @@ import fr.line.appocraft.screen.ModMenuType;
 import fr.line.appocraft.screen.custom.ClosetScreen;
 import fr.line.appocraft.screen.custom.FridgeScreen;
 import fr.line.appocraft.screen.custom.ShelfScreen;
+import fr.line.appocraft.screen.custom.TrashScreen;
 import fr.line.appocraft.tabs.tabs;
+import fr.line.appocraft.thirst.EntityCapabilities;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
@@ -41,6 +46,8 @@ public class AppoCraft
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 
+        modEventBus.addListener(this::Enti);
+
         items.ITEMS.register(modEventBus);
         blocks.BLOCKS.register(modEventBus);
         tabs.TABS.register(modEventBus);
@@ -54,16 +61,6 @@ public class AppoCraft
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        SofaBlock.sofaStates = List.of(
-                blocks.RED_SOFA.get().defaultBlockState(),
-                blocks.RED_SOFA_LEFT.get().defaultBlockState(),
-                blocks.RED_SOFA_RIGHT.get().defaultBlockState(),
-                blocks.RED_SOFA_MIDLE.get().defaultBlockState(),
-                blocks.GREEN_SOFA.get().defaultBlockState(),
-                blocks.GREEN_SOFA_LEFT.get().defaultBlockState(),
-                blocks.GREEN_SOFA_RIGHT.get().defaultBlockState(),
-                blocks.GREEN_SOFA_MIDLE.get().defaultBlockState()
-        );
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -78,6 +75,7 @@ public class AppoCraft
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(blocks.BARBED.get(), RenderType.cutout());
         }
 
         @SubscribeEvent
@@ -85,6 +83,7 @@ public class AppoCraft
             event.register(ModMenuType.CLOSET_MENU.get(), ClosetScreen::new);
             event.register(ModMenuType.FRIDGE_MENU.get(), FridgeScreen::new);
             event.register(ModMenuType.SHELF_MENU.get(), ShelfScreen::new);
+            event.register(ModMenuType.TRASH_MENU.get(), TrashScreen::new);
         }
     }
 }

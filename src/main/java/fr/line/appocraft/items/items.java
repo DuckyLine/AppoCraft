@@ -29,6 +29,13 @@ public class items {
     public static final DeferredItem<Item> SPRUCE_TABLE = ITEMS.register("spruce_table",
             () -> new BlockItem((Block) blocks.SPRUCE_TABLE.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> OAK_COFFEE_TABLE = ITEMS.register("oak_coffee_table",
+            () -> new BlockItem((Block) blocks.OAK_COFFEE_TABLE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BIRCH_COFFEE_TABLE = ITEMS.register("birch_coffee_table",
+            () -> new BlockItem((Block) blocks.BIRCH_COFFEE_TABLE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SPRUCE_COFFEE_TABLE = ITEMS.register("spruce_coffee_table",
+            () -> new BlockItem((Block) blocks.SPRUCE_COFFEE_TABLE.get(), new Item.Properties()));
+
     public static final DeferredItem<Item> OAK_CLOSET = ITEMS.register("oak_closet",
             () -> new BlockItem((Block) blocks.OAK_CLOSET.get(), new Item.Properties()));
     public static final DeferredItem<Item> BIRCH_CLOSET = ITEMS.register("birch_closet",
@@ -74,5 +81,47 @@ public class items {
             () -> new BlockItem((Block) blocks.GREEN_SOFA_RIGHT.get(), new Item.Properties()));
     public static final DeferredItem<Item> GREEN_SOFA_MIDLE = ITEMS.register("green_sofa_midle",
             () -> new BlockItem((Block) blocks.GREEN_SOFA_MIDLE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> WHITE_SOFA = ITEMS.register("white_sofa",
+            () -> new BlockItem((Block) blocks.WHITE_SOFA.get(), new Item.Properties()));
+    public static final DeferredItem<Item> WHITE_SOFA_LEFT = ITEMS.register("white_sofa_left",
+            () -> new BlockItem((Block) blocks.WHITE_SOFA_LEFT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> WHITE_SOFA_RIGHT = ITEMS.register("white_sofa_right",
+            () -> new BlockItem((Block) blocks.WHITE_SOFA_RIGHT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> WHITE_SOFA_MIDLE = ITEMS.register("white_sofa_midle",
+            () -> new BlockItem((Block) blocks.WHITE_SOFA_MIDLE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> BLACK_SOFA = ITEMS.register("black_sofa",
+            () -> new BlockItem((Block) blocks.BLACK_SOFA.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BLACK_SOFA_LEFT = ITEMS.register("black_sofa_left",
+            () -> new BlockItem((Block) blocks.BLACK_SOFA_LEFT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BLACK_SOFA_RIGHT = ITEMS.register("black_sofa_right",
+            () -> new BlockItem((Block) blocks.BLACK_SOFA_RIGHT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BLACK_SOFA_MIDLE = ITEMS.register("black_sofa_midle",
+            () -> new BlockItem((Block) blocks.BLACK_SOFA_MIDLE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> GRAY_SOFA = ITEMS.register("gray_sofa",
+            () -> new BlockItem((Block) blocks.GRAY_SOFA.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GRAY_SOFA_LEFT = ITEMS.register("gray_sofa_left",
+            () -> new BlockItem((Block) blocks.GRAY_SOFA_LEFT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GRAY_SOFA_RIGHT = ITEMS.register("gray_sofa_right",
+            () -> new BlockItem((Block) blocks.GRAY_SOFA_RIGHT.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GRAY_SOFA_MIDLE = ITEMS.register("gray_sofa_midle",
+            () -> new BlockItem((Block) blocks.GRAY_SOFA_MIDLE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> TRASH = ITEMS.register("trash",
+            () -> new BlockItem((Block) blocks.TRASH.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> TV = ITEMS.register("tv",
+            () -> new BlockItem((Block) blocks.TV.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> FOLDING_TABLE = ITEMS.register("folding_table",
+            () -> new BlockItem((Block) blocks.FOLDING_TABLE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> TRAFFIC_CONE = ITEMS.register("traffic_cone",
+            () -> new BlockItem((Block) blocks.TRAFFIC_CONE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> BARBED = ITEMS.register("barbed",
+            () -> new BlockItem((Block) blocks.BARBED.get(), new Item.Properties()));
 
 }

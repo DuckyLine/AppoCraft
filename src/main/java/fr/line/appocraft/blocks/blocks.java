@@ -2,6 +2,8 @@ package fr.line.appocraft.blocks;
 
 import fr.line.appocraft.AppoCraft;
 import fr.line.appocraft.blocks.custom.*;
+import fr.line.appocraft.blocks.custom.TvBlock;
+import fr.line.appocraft.blocks.custom.TrafficConeBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -24,6 +26,13 @@ public class blocks {
             () -> new TableBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final DeferredBlock<Block> SPRUCE_TABLE = BLOCKS.register("spruce_table",
             () -> new TableBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> OAK_COFFEE_TABLE = BLOCKS.register("oak_coffee_table",
+            () -> new CoffeeTableBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> BIRCH_COFFEE_TABLE = BLOCKS.register("birch_coffee_table",
+            () -> new CoffeeTableBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> SPRUCE_COFFEE_TABLE = BLOCKS.register("spruce_coffee_table",
+            () -> new CoffeeTableBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     public static final DeferredBlock<Block> OAK_CLOSET = BLOCKS.register("oak_closet",
             () -> new Closet(BlockBehaviour.Properties.of().noOcclusion(), "oak"));
@@ -70,4 +79,46 @@ public class blocks {
             () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final DeferredBlock<Block> GREEN_SOFA_MIDLE = BLOCKS.register("green_sofa_midle",
             () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> WHITE_SOFA = BLOCKS.register("white_sofa",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> WHITE_SOFA_LEFT = BLOCKS.register("white_sofa_left",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> WHITE_SOFA_RIGHT = BLOCKS.register("white_sofa_right",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> WHITE_SOFA_MIDLE = BLOCKS.register("white_sofa_midle",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> BLACK_SOFA = BLOCKS.register("black_sofa",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> BLACK_SOFA_LEFT = BLOCKS.register("black_sofa_left",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> BLACK_SOFA_RIGHT = BLOCKS.register("black_sofa_right",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> BLACK_SOFA_MIDLE = BLOCKS.register("black_sofa_midle",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> GRAY_SOFA = BLOCKS.register("gray_sofa",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> GRAY_SOFA_LEFT = BLOCKS.register("gray_sofa_left",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> GRAY_SOFA_RIGHT = BLOCKS.register("gray_sofa_right",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> GRAY_SOFA_MIDLE = BLOCKS.register("gray_sofa_midle",
+            () -> new SofaBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> TRASH = BLOCKS.register("trash",
+            () -> new TrashBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> TV = BLOCKS.register("tv",
+            () -> new TvBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> FOLDING_TABLE = BLOCKS.register("folding_table",
+            () -> new FoldingTableBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> TRAFFIC_CONE = BLOCKS.register("traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> BARBED = BLOCKS.register("barbed",
+            () -> new BarbedBlock(BlockBehaviour.Properties.of().noOcclusion().noCollission()));
 }

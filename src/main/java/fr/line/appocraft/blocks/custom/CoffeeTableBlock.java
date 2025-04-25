@@ -12,11 +12,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class ChairBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<ChairBlock> CODEC = simpleCodec(ChairBlock::new);
-    private static final VoxelShape SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
+public class CoffeeTableBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<CoffeeTableBlock> CODEC = simpleCodec(CoffeeTableBlock::new);
+    private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
-    public ChairBlock(Properties properties) {
+    public CoffeeTableBlock(Properties properties) {
         super(properties);
     }
 
