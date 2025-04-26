@@ -4,6 +4,8 @@ import fr.line.appocraft.AppoCraft;
 import fr.line.appocraft.blocks.blocks;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -124,4 +126,39 @@ public class items {
     public static final DeferredItem<Item> BARBED = ITEMS.register("barbed",
             () -> new BlockItem((Block) blocks.BARBED.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> FLOOR_LAMP = ITEMS.register("floor_lamp",
+            () -> new BlockItem((Block) blocks.FLOOR_LAMP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> FLOOR_LAMP_SECOND = ITEMS.register("floor_lamp_second",
+            () -> new BlockItem((Block) blocks.FLOOR_LAMP_SECOND.get(), new Item.Properties()));
+    public static final DeferredItem<Item> FLOOR_LAMP_UP = ITEMS.register("floor_lamp_up",
+            () -> new BlockItem((Block) blocks.FLOOR_LAMP_UP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> BRICKS_1 = ITEMS.register("bricks_1",
+            () -> new BlockItem((Block) blocks.BRICKS_1.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> ROAD_STOP_LINE = ITEMS.register("road_stop_line",
+            () -> new BlockItem((Block) blocks.ROAD_STOP_LINE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ROAD_DOUBLE_LINE = ITEMS.register("road_double_line",
+            () -> new BlockItem((Block) blocks.ROAD_DOUBLE_LINE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ROAD_DOUBLE_CORNER_LINE = ITEMS.register("road_double_corner_line",
+            () -> new BlockItem((Block) blocks.ROAD_DOUBLE_CORNER_LINE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ROAD_CENTER_LINE = ITEMS.register("road_center_line",
+            () -> new BlockItem((Block) blocks.ROAD_CENTER_LINE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ROAD_CENTER_FULL_LINE = ITEMS.register("road_center_full_line",
+            () -> new BlockItem((Block) blocks.ROAD_CENTER_FULL_LINE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ROAD = ITEMS.register("road",
+            () -> new BlockItem((Block) blocks.ROAD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> METAL_1 = ITEMS.register("metal_1",
+            () -> new BlockItem((Block) blocks.METAL_1.get(), new Item.Properties()));
+    public static final DeferredItem<Item> METAL_2 = ITEMS.register("metal_2",
+            () -> new BlockItem((Block) blocks.METAL_2.get(), new Item.Properties()));
+    public static final DeferredItem<Item> METAL_3 = ITEMS.register("metal_3",
+            () -> new BlockItem((Block) blocks.METAL_3.get(), new Item.Properties()));
+    public static final DeferredItem<Item> METALWALL = ITEMS.register("metalwall",
+            () -> new BlockItem((Block) blocks.METALWALL.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> BASEBALLBAT = ITEMS.register("baseballbat",
+            () -> new SwordItem(Tiers.IRON, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(Tiers.IRON, 0, -3.4F))));
 }

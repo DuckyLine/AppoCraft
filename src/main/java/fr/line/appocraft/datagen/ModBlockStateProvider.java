@@ -5,12 +5,14 @@ import fr.line.appocraft.blocks.blocks;
 import fr.line.appocraft.blocks.custom.*;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -80,6 +82,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
         sameBlock(blocks.FOLDING_TABLE.get(), "table/folding_table");
 
         sameBlock(blocks.TRAFFIC_CONE.get(), "other/traffic_cone");
+
+        sameBlock(blocks.FLOOR_LAMP.get(), "road/floor_lamp_base");
+        sameBlock(blocks.FLOOR_LAMP_SECOND.get(), "road/floor_lamp_second");
+        sameBlock(blocks.FLOOR_LAMP_UP.get(), "road/floor_lamp_up");
+
+        blockWithItem(blocks.BRICKS_1);
+
+        blockWithItem(blocks.METAL_1);
+        blockWithItem(blocks.METAL_2);
+        blockWithItem(blocks.METAL_3);
+        blockWithItem(blocks.METALWALL);
+
+        directionBlock(blocks.ROAD_DOUBLE_LINE.get(), "road/road_double_line");
+        directionBlock(blocks.ROAD_DOUBLE_CORNER_LINE.get(), "road/road_double_corner_line");
+        directionBlock(blocks.ROAD_STOP_LINE.get(), "road/road_stop_line");
+        directionBlock(blocks.ROAD_CENTER_LINE.get(), "road/road_center_line");
+        directionBlock(blocks.ROAD_CENTER_FULL_LINE.get(), "road/road_center_full_line");
+        directionBlock(blocks.ROAD.get(), "road/road");
+    }
+
+    private void blockWithItem(DeferredBlock<?> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
     private void directionBlockEntity(Block block, String name, DirectionProperty Facing) {

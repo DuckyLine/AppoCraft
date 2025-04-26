@@ -1,7 +1,6 @@
 package fr.line.appocraft;
 
 import fr.line.appocraft.blocks.blocks;
-import fr.line.appocraft.blocks.custom.SofaBlock;
 import fr.line.appocraft.blocks.entity.ModBlockEntity;
 import fr.line.appocraft.items.items;
 import fr.line.appocraft.screen.ModMenuType;
@@ -10,11 +9,9 @@ import fr.line.appocraft.screen.custom.FridgeScreen;
 import fr.line.appocraft.screen.custom.ShelfScreen;
 import fr.line.appocraft.screen.custom.TrashScreen;
 import fr.line.appocraft.tabs.tabs;
-import fr.line.appocraft.thirst.EntityCapabilities;
+import fr.line.appocraft.thirst.AttachmentType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
@@ -33,8 +30,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-import java.util.List;
-
 @Mod(AppoCraft.MODID)
 public class AppoCraft
 {
@@ -46,8 +41,6 @@ public class AppoCraft
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::Enti);
-
         items.ITEMS.register(modEventBus);
         blocks.BLOCKS.register(modEventBus);
         tabs.TABS.register(modEventBus);
@@ -55,6 +48,8 @@ public class AppoCraft
         ModBlockEntity.register(modEventBus);
 
         ModMenuType.MENUS.register(modEventBus);
+
+        AttachmentType.ATTACHMENT_TYPE.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

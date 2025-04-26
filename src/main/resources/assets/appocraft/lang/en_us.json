@@ -26,7 +26,11 @@
   "block.appocraft.folding_table": "Folding Table",
   "block.appocraft.traffic_cone": "Traffic Cone",
   "block.appocraft.barbed": "Barbed",
+  "block.appocraft.floor_lamp": "Floor Lamp",
+  "block.appocraft.bricks_1": "Basic Bricks",
 
   "creativetab.appocraft.appocraft_ressources": "AppoCraft Ressources",
-  "creativetab.appocraft.appocraft_furnitures": "AppoCraft Furnitures"
+  "creativetab.appocraft.appocraft_furnitures": "AppoCraft Furnitures",
+  "creativetab.appocraft.appocraft_weapons": "AppoCraft Weapons",
+  "creativetab.appocraft.appocraft_blocks": "AppoCraft Blocks"
 }

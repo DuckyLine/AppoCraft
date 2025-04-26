@@ -4,6 +4,9 @@ import fr.line.appocraft.AppoCraft;
 import fr.line.appocraft.blocks.custom.*;
 import fr.line.appocraft.blocks.custom.TvBlock;
 import fr.line.appocraft.blocks.custom.TrafficConeBlock;
+import fr.line.appocraft.blocks.custom.floor_lamp.FloorLampBaseBlock;
+import fr.line.appocraft.blocks.custom.floor_lamp.FloorLampSecondBlock;
+import fr.line.appocraft.blocks.custom.floor_lamp.FloorLampUpBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -121,4 +124,36 @@ public class blocks {
 
     public static final DeferredBlock<Block> BARBED = BLOCKS.register("barbed",
             () -> new BarbedBlock(BlockBehaviour.Properties.of().noOcclusion().noCollission()));
+
+    public static final DeferredBlock<Block> FLOOR_LAMP = BLOCKS.register("floor_lamp",
+            () -> new FloorLampBaseBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> FLOOR_LAMP_SECOND = BLOCKS.register("floor_lamp_second",
+            () -> new FloorLampSecondBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> FLOOR_LAMP_UP = BLOCKS.register("floor_lamp_up",
+            () -> new FloorLampUpBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> BRICKS_1 = BLOCKS.register("bricks_1",
+            () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> ROAD_STOP_LINE = BLOCKS.register("road_stop_line",
+            () -> new RoadBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> ROAD_DOUBLE_LINE = BLOCKS.register("road_double_line",
+            () -> new RoadBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> ROAD_DOUBLE_CORNER_LINE = BLOCKS.register("road_double_corner_line",
+            () -> new RoadBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> ROAD_CENTER_LINE = BLOCKS.register("road_center_line",
+            () -> new RoadBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> ROAD_CENTER_FULL_LINE = BLOCKS.register("road_center_full_line",
+            () -> new RoadBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> ROAD = BLOCKS.register("road",
+            () -> new RoadBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> METAL_1 = BLOCKS.register("metal_1",
+            () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> METAL_2 = BLOCKS.register("metal_2",
+            () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> METAL_3 = BLOCKS.register("metal_3",
+            () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final DeferredBlock<Block> METALWALL = BLOCKS.register("metalwall",
+            () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));
 }

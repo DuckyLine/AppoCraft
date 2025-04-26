@@ -25,6 +25,34 @@ public class tabs {
                     })
                     .build());
 
+    public static final Supplier<CreativeModeTab> APPOCRAFT_WEAPONS = TABS.register("appocraft_weapons",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(items.BASEBALLBAT.get()))
+                    .title(Component.translatable("creativetab.appocraft.appocraft_ressources"))
+                    .displayItems((Parameters, Output) -> {
+                        Output.accept(items.BASEBALLBAT.get());
+                    })
+                    .build());
+
+    public static final Supplier<CreativeModeTab> APPOCRAFT_BLOCKS = TABS.register("appocraft_blocks",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(items.BRICKS_1.get()))
+                    .title(Component.translatable("creativetab.appocraft.appocraft_ressources"))
+                    .displayItems((Parameters, Output) -> {
+                        Output.accept(blocks.BRICKS_1.get());
+                        Output.accept(blocks.ROAD_DOUBLE_LINE.get());
+                        Output.accept(blocks.ROAD_DOUBLE_CORNER_LINE.get());
+                        Output.accept(blocks.ROAD_STOP_LINE.get());
+                        Output.accept(blocks.ROAD_CENTER_LINE.get());
+                        Output.accept(blocks.ROAD_CENTER_FULL_LINE.get());
+                        Output.accept(blocks.ROAD.get());
+                        Output.accept(blocks.METAL_1.get());
+                        Output.accept(blocks.METAL_2.get());
+                        Output.accept(blocks.METAL_3.get());
+                        Output.accept(blocks.METALWALL.get());
+                    })
+                    .build());
+
     public static final Supplier<CreativeModeTab> APPOCRAFT_FURNITURES = TABS.register("appocraft_furnitures",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(items.OAK_CHAIR.get()))
@@ -55,6 +83,7 @@ public class tabs {
                         Output.accept(blocks.FOLDING_TABLE);
                         Output.accept(blocks.TRAFFIC_CONE);
                         Output.accept(blocks.BARBED);
+                        Output.accept(blocks.FLOOR_LAMP);
                     })
                     .build());
 
