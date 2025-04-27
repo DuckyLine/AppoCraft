@@ -161,4 +161,8 @@ public class items {
     public static final DeferredItem<Item> BASEBALLBAT = ITEMS.register("baseballbat",
             () -> new SwordItem(Tiers.IRON, new Item.Properties()
                     .attributes(SwordItem.createAttributes(Tiers.IRON, 0, -3.4F))));
+
+    public static final DeferredItem<Item> SMALL_CUT = ITEMS.register("small_cut",
+            () -> new SwordItem(Tiers.IRON, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(Tiers.IRON, -1, -2.1F))));
 }

@@ -31,6 +31,7 @@ public class tabs {
                     .title(Component.translatable("creativetab.appocraft.appocraft_ressources"))
                     .displayItems((Parameters, Output) -> {
                         Output.accept(items.BASEBALLBAT.get());
+                        Output.accept(items.SMALL_CUT.get());
                     })
                     .build());
 
